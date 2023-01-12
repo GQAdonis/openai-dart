@@ -8,7 +8,7 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:openapi/api.dart';
+import 'package:openai/api.dart';
 import 'package:test/test.dart';
 
 // tests for CreateImageRequest
@@ -40,13 +40,10 @@ void main() {
       // TODO
     });
 
-    // A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids). 
+    // A unique identifier representing your end-user, which can help OpenAI to monitor and detect abuse. [Learn more](/docs/guides/safety-best-practices/end-user-ids).
     // String user
     test('to test the property `user`', () async {
       // TODO
     });
-
-
   });
-
 }

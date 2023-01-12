@@ -8,30 +8,29 @@
 // ignore_for_file: constant_identifier_names
 // ignore_for_file: lines_longer_than_80_chars
 
-import 'package:openapi/api.dart';
+import 'package:openai/pi.dart';
 import 'package:test/test.dart';
-
 
 /// tests for OpenAIApi
 void main() {
   // final instance = OpenAIApi();
 
   group('tests for OpenAIApi', () {
-    // Immediately cancel a fine-tune job. 
+    // Immediately cancel a fine-tune job.
     //
     //Future<FineTune> cancelFineTune(String fineTuneId) async
     test('test cancelFineTune', () async {
       // TODO
     });
 
-    // Answers the specified question using the provided documents and examples.  The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions). 
+    // Answers the specified question using the provided documents and examples.  The endpoint first [searches](/docs/api-reference/searches) over provided documents or files to find relevant context. The relevant context is combined with the provided examples and question to create the prompt for [completion](/docs/api-reference/completions).
     //
     //Future<CreateAnswerResponse> createAnswer(CreateAnswerRequest createAnswerRequest) async
     test('test createAnswer', () async {
       // TODO
     });
 
-    // Classifies the specified `query` using provided examples.  The endpoint first [searches](/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query. Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](/docs/api-reference/completions) endpoint.  Labeled examples can be provided via an uploaded `file`, or explicitly listed in the request using the `examples` parameter for quick tests and small scale use cases. 
+    // Classifies the specified `query` using provided examples.  The endpoint first [searches](/docs/api-reference/searches) over the labeled examples to select the ones most relevant for the particular query. Then, the relevant examples are combined with the query to construct a prompt to produce the final label via the [completions](/docs/api-reference/completions) endpoint.  Labeled examples can be provided via an uploaded `file`, or explicitly listed in the request using the `examples` parameter for quick tests and small scale use cases.
     //
     //Future<CreateClassificationResponse> createClassification(CreateClassificationRequest createClassificationRequest) async
     test('test createClassification', () async {
@@ -59,14 +58,14 @@ void main() {
       // TODO
     });
 
-    // Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit. 
+    // Upload a file that contains document(s) to be used across various endpoints/features. Currently, the size of all the files uploaded by one organization can be up to 1 GB. Please contact us if you need to increase the storage limit.
     //
     //Future<OpenAIFile> createFile(MultipartFile file, String purpose) async
     test('test createFile', () async {
       // TODO
     });
 
-    // Creates a job that fine-tunes a specified model from a given dataset.  Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.  [Learn more about Fine-tuning](/docs/guides/fine-tuning) 
+    // Creates a job that fine-tunes a specified model from a given dataset.  Response includes details of the enqueued job including job status and the name of the fine-tuned models once complete.  [Learn more about Fine-tuning](/docs/guides/fine-tuning)
     //
     //Future<FineTune> createFineTune(CreateFineTuneRequest createFineTuneRequest) async
     test('test createFineTune', () async {
@@ -101,7 +100,7 @@ void main() {
       // TODO
     });
 
-    // The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.  To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.  The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query. 
+    // The search endpoint computes similarity scores between provided query and documents. Documents can be passed directly to the API if there are no more than 200 of them.  To go beyond the 200 document limit, documents can be processed offline and then used for efficient retrieval at query time. When `file` is set, the search endpoint searches over all the documents in the given file and returns up to the `max_rerank` number of documents. These documents will be returned along with their search scores.  The similarity score is a positive score that usually ranges from 0 to 300 (but can sometimes go higher), where a score above 200 usually means the document is semantically similar to the query.
     //
     //Future<CreateSearchResponse> createSearch(String engineId, CreateSearchRequest createSearchRequest) async
     test('test createSearch', () async {
@@ -143,14 +142,14 @@ void main() {
       // TODO
     });
 
-    // Get fine-grained status updates for a fine-tune job. 
+    // Get fine-grained status updates for a fine-tune job.
     //
     //Future<ListFineTuneEventsResponse> listFineTuneEvents(String fineTuneId, { bool stream }) async
     test('test listFineTuneEvents', () async {
       // TODO
     });
 
-    // List your organization's fine-tuning jobs 
+    // List your organization's fine-tuning jobs
     //
     //Future<ListFineTunesResponse> listFineTunes() async
     test('test listFineTunes', () async {
@@ -178,7 +177,7 @@ void main() {
       // TODO
     });
 
-    // Gets info about the fine-tune job.  [Learn more about Fine-tuning](/docs/guides/fine-tuning) 
+    // Gets info about the fine-tune job.  [Learn more about Fine-tuning](/docs/guides/fine-tuning)
     //
     //Future<FineTune> retrieveFineTune(String fineTuneId) async
     test('test retrieveFineTune', () async {
@@ -191,6 +190,5 @@ void main() {
     test('test retrieveModel', () async {
       // TODO
     });
-
   });
 }
