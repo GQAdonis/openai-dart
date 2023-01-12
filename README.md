@@ -17,7 +17,7 @@ If this Dart package is published to Github, add the following dependency to you
 ```
 dependencies:
   openapi:
-    git: https://github.com/GIT_USER_ID/GIT_REPO_ID.git
+    git: https://github.com/gqadonis/openai-dart.git
 ```
 
 ### Local
@@ -37,7 +37,7 @@ TODO
 Please follow the [installation procedure](#installation--usage) and then run the following:
 
 ```dart
-import 'package:openapi/api.dart';
+import 'package:openai/api.dart';
 
 
 final api_instance = OpenAIApi();

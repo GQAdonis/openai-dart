@@ -2,10 +2,10 @@
 # AUTO-GENERATED FILE, DO NOT MODIFY!
 #
 
-name: 'openapi'
+name: 'openai'
 version: '1.0.0'
-description: 'OpenAPI API client'
-homepage: 'homepage'
+description: 'OpenAI API client'
+homepage: 'http://tribehealthsolutions.com'
 environment:
   sdk: '>=2.12.0 <3.0.0'
 dependencies:
