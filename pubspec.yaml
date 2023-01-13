@@ -1,16 +1,7 @@
-#
-# AUTO-GENERATED FILE, DO NOT MODIFY!
-#
-
-name: 'openai'
-version: '1.0.0'
-description: 'OpenAI API client'
-homepage: 'http://tribehealthsolutions.com'
-environment:
-  sdk: '>=2.12.0 <3.0.0'
+name: openai
+version: 1.1.0
+description: OpenAI API client
 dependencies:
-  http: '>=0.13.0 <0.14.0'
-  intl: '^0.17.0'
-  meta: '^1.1.8'
+  http: '>=0.11.1 <0.13.0'
 dev_dependencies:
-  test: '>=1.16.0 <1.18.0'
+  test: ^1.22.2

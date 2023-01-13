@@ -1,135 +1,48 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openai.api;
 
 class FineTuneEvent {
-  /// Returns a new [FineTuneEvent] instance.
-  FineTuneEvent({
-    required this.object,
-    required this.createdAt,
-    required this.level,
-    required this.message,
-  });
+  
+  String object = null;
 
-  String object;
+  int createdAt = null;
 
-  int createdAt;
+  String level = null;
 
-  String level;
+  String message = null;
 
-  String message;
+  FineTuneEvent();
 
   @override
-  bool operator ==(Object other) => identical(this, other) || other is FineTuneEvent &&
-     other.object == object &&
-     other.createdAt == createdAt &&
-     other.level == level &&
-     other.message == message;
+  String toString() {
+    return 'FineTuneEvent[object=$object, createdAt=$createdAt, level=$level, message=$message, ]';
+  }
 
-  @override
-  int get hashCode =>
-    // ignore: unnecessary_parenthesis
-    (object.hashCode) +
-    (createdAt.hashCode) +
-    (level.hashCode) +
-    (message.hashCode);
-
-  @override
-  String toString() => 'FineTuneEvent[object=$object, createdAt=$createdAt, level=$level, message=$message]';
+  FineTuneEvent.fromJson(Map<String, dynamic> json) {
+    if (json == null) return;
+    object = json['object'];
+    createdAt = json['created_at'];
+    level = json['level'];
+    message = json['message'];
+  }
 
   Map<String, dynamic> toJson() {
-    final json = <String, dynamic>{};
-      json[r'object'] = this.object;
-      json[r'created_at'] = this.createdAt;
-      json[r'level'] = this.level;
-      json[r'message'] = this.message;
-    return json;
+    return {
+      'object': object,
+      'created_at': createdAt,
+      'level': level,
+      'message': message
+     };
   }
 
-  /// Returns a new [FineTuneEvent] instance and imports its values from
-  /// [value] if it's a [Map], null otherwise.
-  // ignore: prefer_constructors_over_static_methods
-  static FineTuneEvent? fromJson(dynamic value) {
-    if (value is Map) {
-      final json = value.cast<String, dynamic>();
-
-      // Ensure that the map contains the required keys.
-      // Note 1: the values aren't checked for validity beyond being non-null.
-      // Note 2: this code is stripped in release mode!
-      assert(() {
-        requiredKeys.forEach((key) {
-          assert(json.containsKey(key), 'Required key "FineTuneEvent[$key]" is missing from JSON.');
-          assert(json[key] != null, 'Required key "FineTuneEvent[$key]" has a null value in JSON.');
-        });
-        return true;
-      }());
-
-      return FineTuneEvent(
-        object: mapValueOfType<String>(json, r'object')!,
-        createdAt: mapValueOfType<int>(json, r'created_at')!,
-        level: mapValueOfType<String>(json, r'level')!,
-        message: mapValueOfType<String>(json, r'message')!,
-      );
-    }
-    return null;
+  static List<FineTuneEvent> listFromJson(List<dynamic> json) {
+    return json == null ? new List<FineTuneEvent>() : json.map((value) => new FineTuneEvent.fromJson(value)).toList();
   }
 
-  static List<FineTuneEvent>? listFromJson(dynamic json, {bool growable = false,}) {
-    final result = <FineTuneEvent>[];
-    if (json is List && json.isNotEmpty) {
-      for (final row in json) {
-        final value = FineTuneEvent.fromJson(row);
-        if (value != null) {
-          result.add(value);
-        }
-      }
-    }
-    return result.toList(growable: growable);
-  }
-
-  static Map<String, FineTuneEvent> mapFromJson(dynamic json) {
-    final map = <String, FineTuneEvent>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = FineTuneEvent.fromJson(entry.value);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
+  static Map<String, FineTuneEvent> mapFromJson(Map<String, Map<String, dynamic>> json) {
+    var map = new Map<String, FineTuneEvent>();
+    if (json != null && json.length > 0) {
+      json.forEach((String key, Map<String, dynamic> value) => map[key] = new FineTuneEvent.fromJson(value));
     }
     return map;
   }
-
-  // maps a json object with a list of FineTuneEvent-objects as value to a dart map
-  static Map<String, List<FineTuneEvent>> mapListFromJson(dynamic json, {bool growable = false,}) {
-    final map = <String, List<FineTuneEvent>>{};
-    if (json is Map && json.isNotEmpty) {
-      json = json.cast<String, dynamic>(); // ignore: parameter_assignments
-      for (final entry in json.entries) {
-        final value = FineTuneEvent.listFromJson(entry.value, growable: growable,);
-        if (value != null) {
-          map[entry.key] = value;
-        }
-      }
-    }
-    return map;
-  }
-
-  /// The list of required keys that must be present in a JSON.
-  static const requiredKeys = <String>{
-    'object',
-    'created_at',
-    'level',
-    'message',
-  };
 }
-

@@ -1,40 +1,27 @@
-//
-// AUTO-GENERATED FILE, DO NOT MODIFY!
-//
-// @dart=2.12
-
-// ignore_for_file: unused_element, unused_import
-// ignore_for_file: always_put_required_named_parameters_first
-// ignore_for_file: constant_identifier_names
-// ignore_for_file: lines_longer_than_80_chars
-
 part of openai.api;
 
 class ApiKeyAuth implements Authentication {
-  ApiKeyAuth(this.location, this.paramName);
 
   final String location;
   final String paramName;
+  String apiKey;
+  String apiKeyPrefix;
 
-  String apiKeyPrefix = '';
-  String apiKey = '';
+  ApiKeyAuth(this.location, this.paramName);
 
   @override
-  Future<void> applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams,) async {
-    final paramValue = apiKeyPrefix.isEmpty ? apiKey : '$apiKeyPrefix $apiKey';
+  void applyToParams(List<QueryParam> queryParams, Map<String, String> headerParams) {
+    String value;
+    if (apiKeyPrefix != null) {
+      value = '$apiKeyPrefix $apiKey';
+    } else {
+      value = apiKey;
+    }
 
-    if (paramValue.isNotEmpty) {
-      if (location == 'query') {
-        queryParams.add(QueryParam(paramName, paramValue));
-      } else if (location == 'header') {
-        headerParams[paramName] = paramValue;
-      } else if (location == 'cookie') {
-        headerParams.update(
-          'Cookie',
-          (existingCookie) => '$existingCookie; $paramName=$paramValue',
-          ifAbsent: () => '$paramName=$paramValue',
-        );
-      }
+    if (location == 'query' && value != null) {
+      queryParams.add(new QueryParam(paramName, value));
+    } else if (location == 'header' && value != null) {
+      headerParams[paramName] = value;
     }
   }
 }
